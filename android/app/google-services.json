@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "50361850972",
+    "project_id": "fir-notekeeper",
+    "storage_bucket": "fir-notekeeper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50361850972:android:249726c5b90a49918e9a99",
+        "android_client_info": {
+          "package_name": "com.oogway.notekeeper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50361850972-mi5bpvlmslpb12hkd5k97g1225fdoq1e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIC038702wTdtPOyx3KvDTeOUGHmZCmBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50361850972-mi5bpvlmslpb12hkd5k97g1225fdoq1e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
