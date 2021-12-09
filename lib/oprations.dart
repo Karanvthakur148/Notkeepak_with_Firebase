@@ -1,32 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 
-
-TextEditingController titleController = TextEditingController();
-TextEditingController descriptionController = TextEditingController();
 class Opration {
-
-  void createDb() {
+  void createDb({dynamic data}) {
     CollectionReference db = FirebaseFirestore.instance.collection('Database');
-    db.add({'title': titleController.text, 'description': descriptionController.text});
+    db.add(data);
   }
 
-  void fetchDb() async {
-    var collection = FirebaseFirestore.instance.collection('Database');
-    var querySnapshot = await collection.get();
-    for (var queryDocumentSnapshot in querySnapshot.docs) {
-      Map<String, dynamic> data = queryDocumentSnapshot.data();
-      var name = data['title'];
-      var mobile = data['description'];
-    }
-  }
-
-  void updateDb() async {
+  void updateDb({dynamic data, required docId}) async {
     CollectionReference collectionReference =
-    FirebaseFirestore.instance.collection('Database');
-    QuerySnapshot querySnapshot = await collectionReference.get();
-    querySnapshot.docs[0].reference
-        .update({"title": titleController.text, "description": descriptionController.text});
+        FirebaseFirestore.instance.collection('Database');
+    await collectionReference.doc(docId).update(data);
   }
 
   void deleteDb({required String docId}) async {
@@ -37,7 +21,4 @@ class Opration {
         .then((_) => print('Deleted'))
         .catchError((error) => print('Delete failed: $error'));
   }
-
-
-
 }
